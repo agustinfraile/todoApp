@@ -7,6 +7,7 @@ import styles from "./Notes.module.css";
 const Notes = () => {
   const [task, setTask] = useState({
     name: '',
+    completed: false,
     id: Date.now()
   });
   const [allTask, setAllTask] = useState([]);
@@ -18,11 +19,26 @@ const Notes = () => {
     }))
   };
 
-  // console.log(allTask);
+  console.log(allTask);
 
   const onDeleteTask = (id) => {
     const filteredTask = allTask.filter(task => task.id !== id);
     setAllTask(filteredTask);
+  }
+
+  const onCompleteTask = (id) => {
+    setAllTask((prevTask) => (
+      prevTask.map(task => {
+        if (task.id === id) {
+          return {
+            ...task,
+            completed: !task.completed
+          }
+        }
+        return task;
+      })
+      
+    ))
   }
 
 
@@ -33,7 +49,8 @@ const Notes = () => {
       setAllTask((prevTask) => [...prevTask, task]);
       setTask({
         name: '',
-        id: Date.now()
+        id: Date.now(),
+        completed: false
       });
     }
   };
@@ -47,6 +64,7 @@ const Notes = () => {
               key={tasks.id} 
               tasks = {tasks}
               onDeleteTask={onDeleteTask}
+              onCompleteTask={onCompleteTask}
             />
           ))}
         </div>

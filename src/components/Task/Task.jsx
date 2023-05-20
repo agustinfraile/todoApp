@@ -3,18 +3,26 @@ import React from "react";
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import RadioButtonUncheckedIcon from '@mui/icons-material/RadioButtonUnchecked';
+import RadioButtonCheckedIcon from '@mui/icons-material/RadioButtonChecked';
 
 import styles from "./Task.module.css";
 
-const Task = ({ tasks, onDeleteTask }) => {
+const Task = ({ tasks, onDeleteTask, onCompleteTask }) => {
 
+    // console.log(tasks)
 
   return (
     <div className={styles.taskContainer}>
         
         <div className={styles.completeTask}>
-            <div className={styles.completeBtn}>
-                <RadioButtonUncheckedIcon className={styles.completeIcon}/>
+            <div className={styles.completeBtn} onClick={()=> onCompleteTask(tasks.id)}>
+                {
+                    tasks.completed ? 
+                    <RadioButtonCheckedIcon className={styles.completeIcon} /> 
+                    : 
+                    <RadioButtonUncheckedIcon className={styles.completeIcon}/>
+                }
+                
             </div>
         </div>
 
