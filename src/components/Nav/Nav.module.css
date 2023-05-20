@@ -1,0 +1,42 @@
+.navContainer {
+    background-color: rgb(44, 67, 67);
+
+    width: 100%;
+    height: 4em;
+}
+
+.navContainer_ul {
+    /* background-color: bisque; */
+
+    width: 20%;
+    height: fit-content;
+    padding: .5em 0;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.navContainer_link {
+    /* background-color: yellowgreen; */
+    
+    text-decoration: none;
+    width: 5em;
+    height: 3em;
+}
+
+.navContainer_list {
+    background-color: rgba(240, 255, 255, 0.306);
+    
+    font-size: 1.4em;
+    text-align: center;
+    list-style-type: none;
+    color: #fff;
+    font-weight: 400;
+    padding: .5em;
+    transition: .5s;
+}
+
+.navContainer_list:hover {
+    transform: scale(107%);
+    transition: .3s;
+
+}
