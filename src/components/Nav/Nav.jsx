@@ -11,7 +11,7 @@ const Nav = () => {
           <li className={styles.navContainer_list}>Inicio</li>
         </Link>
         <Link to="/notes" className={styles.navContainer_link}>
-          <li className={styles.navContainer_list}>Notas</li>
+          <li className={styles.navContainer_list}>Lista</li>
         </Link>
       </ul>
     </nav>

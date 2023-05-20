@@ -1,0 +1,75 @@
+.notesContainer {
+    background-color: rgb(246, 246, 235);
+
+    width: 100%;
+    min-height: 75vh;
+
+    display: flex;
+}
+
+
+
+.notesInput {
+    /* background-color: rgb(187, 202, 230); */
+    background-color: azure;
+
+    width: 100%;
+    height: 75vh;
+}
+
+.notesInput_form {
+    /* background-color: aquamarine; */
+    margin: 0 auto;
+    width: 80%;
+    height: 3em;
+    
+}
+
+.formContainer {
+    background-color: #00000076;
+
+    width: 100%;
+    height: 3em;
+    box-shadow: 1px 2px 4px 2px hsla(0, 0%, 0%, 0.097);
+
+    position: relative;
+    top: 0;
+    margin: .5em 0;
+    
+}
+
+.formContainer_input {
+    width: 95%;
+    height: 3.6em;
+    
+    border: none;
+    outline: none;
+    padding: 0 .5em;
+    background-color: transparent;
+    color: #e8e8e8;
+}
+
+.formContainer_input::placeholder {
+    color: #e8e8e8;
+}
+
+.formContainer_submit {
+    background-color: rgb(110, 158, 158);
+
+    width: 1.8em;
+    height: 1.8em;
+    
+    font-size: 1.2em;
+    cursor: pointer;
+    border: none;
+    border-radius: 50%;
+    color: #e8e8e8;
+    transition: .2s;
+}
+
+.formContainer_submit:hover {
+    background-color: rgb(127, 179, 179);
+    transform: scale(106%);
+    font-size: 1.25em;
+    transition: .2s;
+}
