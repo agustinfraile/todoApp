@@ -1,0 +1,148 @@
+.taskContainer {
+    background-color: rgb(158, 215, 222);
+
+    width: 80%;
+    height: 3em;
+    margin: 1em auto;
+    display: flex;
+    border-radius: 8px;
+    box-shadow: 1px 2px 4px 2px hsla(0, 0%, 0%, 0.097);
+}
+
+.completeTask {
+    /* background-color: aqua; */
+
+    width: 4%;
+    height: 3em;
+}
+
+.completeBtn {
+    /* background-color: antiquewhite; */
+
+    width: 100%;
+    height: 3em;
+    padding: .3em .5em ;
+}
+
+.completeIcon {
+    /* background-color: #2a2a2a; */
+
+    width: 2.5em;
+    height: 2.5em;
+
+    margin: .25em auto;
+    border-radius: 12px;
+    /* box-shadow: 1px 2px 4px 2px hsla(0, 0%, 0%, 0.097); */
+    cursor: pointer;
+    transition: .2s;
+}
+
+.inputEditContainer {
+    /* background-color: #00000076; */
+
+    width: 100%;
+    height: 3em;
+    /* box-shadow: 1px 2px 4px 2px hsla(0, 0%, 0%, 0.097); */
+
+    position: relative;
+    top: 0;
+    margin: 0em 0;
+}
+
+.inputEdit {
+    width: 95%;
+    height: 3em;
+    
+    border: none;
+    outline: none;
+    /* padding: 0 .5em; */
+    background-color: transparent;
+    /* background-color: #2a2a2a; */
+    font-size: 1em;
+    color: #000000;
+}
+
+.taskContainer_name {
+    background-color: rgb(158, 215, 222);
+    width: 86%;
+    height: 3em;
+    color: #2a2a2a;
+    border-radius: 8px;
+
+}
+
+.taskContainer_name__h3 {
+    text-align: start;
+    padding: .6em .5em;
+}
+
+.taskContainer_buttons {
+    /* background-color: rgb(177, 125, 125); */
+
+    width: 10%;
+    height: 3em;
+    display: flex;
+}
+
+.taskContainer_buttons_delete {
+    /* background-color: rgba(255, 0, 0, 0.302); */
+    
+    width: 50%;
+    height: 3em;
+
+}
+
+.taskContainer_buttons_editar {
+    /* background-color: rgba(0, 0, 255, 0.356); */
+    
+    width: 50%;
+    height: 3em;
+
+}
+
+.deleteBtn {
+    background-color: rgb(251, 53, 53);
+
+    width: 2.5em;
+    height: 2.5em;
+
+    margin: .25em auto;
+    border-radius: 12px;
+    box-shadow: 1px 2px 4px 2px hsla(0, 0%, 0%, 0.097);
+    cursor: pointer;
+    transition: .2s;
+
+}
+
+.deleteBtn:hover {
+    background-color: rgb(207, 31, 31);
+    transition: .2s;
+}
+
+.editBtn {
+    background-color: rgb(42, 42, 249);
+
+    width: 2.5em;
+    height: 2.5em;
+
+    margin: .25em auto;
+    border-radius: 12px;
+    box-shadow: 1px 2px 4px 2px hsla(0, 0%, 0%, 0.097);
+    cursor: pointer;
+    transition: .2s;
+
+}
+
+.editBtn:hover {
+    background-color: rgb(30, 30, 200);
+    transition: .2s;
+
+}
+
+.editIcon {
+    /* background-color: aliceblue; */
+    width: 2em;
+    height: 2em;
+    margin: .3em;
+    color: #fff;
+}
