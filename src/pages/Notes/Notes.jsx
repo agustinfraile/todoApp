@@ -1,46 +1,74 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import Task from "../../components/Task/Task";
 
 import styles from "./Notes.module.css";
 
 const Notes = () => {
-  const [task, setTask] = useState({
-    name: '',
-    completed: false,
-    id: Date.now()
+  const [allTask, setAllTask] = useState(() => {
+    const storeTasks = localStorage.getItem("tasks");
+    return storeTasks ? JSON.parse(storeTasks) : [];
   });
-  const [allTask, setAllTask] = useState([]);
+  
+  const [task, setTask] = useState({
+    name: "",
+    completed: false,
+    id: Date.now(),
+  });
 
+  // console.log(allTask);
+
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(allTask));
+  }, [allTask]);
+
+  useEffect(() => {
+    const storeTasks = localStorage.getItem('tasks');
+    if(storeTasks) {
+      setAllTask(JSON.parse(storeTasks));
+    }
+  }, [])
+  
   const handleInputChange = (e) => {
     setTask((prevTask) => ({
       ...prevTask,
-      name: e.target.value
-    }))
+      name: e.target.value,
+    }));
   };
 
-  console.log(allTask);
-
   const onDeleteTask = (id) => {
-    const filteredTask = allTask.filter(task => task.id !== id);
+    const filteredTask = allTask.filter((task) => task.id !== id);
     setAllTask(filteredTask);
-  }
+    localStorage.setItem('tasks', JSON.stringify(filteredTask));
+  };
 
   const onCompleteTask = (id) => {
-    setAllTask((prevTask) => (
-      prevTask.map(task => {
+    setAllTask((prevTask) =>
+      prevTask.map((task) => {
         if (task.id === id) {
           return {
             ...task,
-            completed: !task.completed
-          }
+            completed: !task.completed,
+          };
         }
         return task;
       })
-      
-    ))
-  }
+    );
+  };
 
+  const onEditTask = (id, newTask) => {
+    setAllTask((prevTask) =>
+      prevTask.map((task) => {
+        if (task.id === id) {
+          return {
+            ...task,
+            name: newTask,
+          };
+        }
+        return task;
+      })
+    );
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -48,9 +76,9 @@ const Notes = () => {
     if (task.name.trim() !== "") {
       setAllTask((prevTask) => [...prevTask, task]);
       setTask({
-        name: '',
+        name: "",
         id: Date.now(),
-        completed: false
+        completed: false,
       });
     }
   };
@@ -60,11 +88,12 @@ const Notes = () => {
       <div className={styles.notesInput}>
         <div className={styles.showInputs}>
           {allTask.map((tasks) => (
-            <Task 
-              key={tasks.id} 
-              tasks = {tasks}
+            <Task
+              key={tasks.id}
+              tasks={tasks}
               onDeleteTask={onDeleteTask}
               onCompleteTask={onCompleteTask}
+              onEditTask={onEditTask}
             />
           ))}
         </div>
