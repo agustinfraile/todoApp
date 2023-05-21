@@ -99,7 +99,10 @@ const Notes = () => {
         </div>
 
         <div className={styles.notesInput_form}>
-          <form onClick={handleSubmit} className={styles.formContainer}>
+          <form 
+            onClick={handleSubmit} 
+            className={styles.formContainer}
+          >
             <input
               className={styles.formContainer_input}
               type="text"
@@ -108,7 +111,10 @@ const Notes = () => {
               placeholder="Agregar una tarea"
               onChange={(e) => handleInputChange(e)}
             />
-            <button type="submit" className={styles.formContainer_submit}>
+            <button 
+              type="submit" 
+              className={styles.formContainer_submit}
+            >
               +
             </button>
           </form>
