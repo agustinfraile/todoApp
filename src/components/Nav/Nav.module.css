@@ -41,3 +41,13 @@
     transition: .3s;
 
 }
+
+@media (max-width: 894px) {
+    
+    .navContainer_ul {
+        /* background-color: bisque; */
+        
+        width: 100%;
+    }
+    
+}
