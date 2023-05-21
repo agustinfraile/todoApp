@@ -1,0 +1,52 @@
+.homeContainer {
+    width: 100%;
+    min-height: 65vh;
+}
+
+.titleContainer {
+    /* background-color: aquamarine; */
+    width: 80%;
+    height: 8em;
+    margin: 8em auto;
+    padding: 2.5em 0;
+}
+
+.titleContainer_h1 {
+    /* background-color: bisque; */
+    width: 90%;
+    height: fit-content;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.notesBtn_link {
+    text-decoration: none;
+    color: #f5f5f5;
+}
+
+.notesBtn {
+    background-color: rgb(4, 95, 95);
+
+    width: 15em;
+    height: 3em;
+    margin: 0 auto;
+    border-radius: 16px;
+
+    transition: .3s;
+}
+
+.notesBtn:hover {
+    background-color: rgb(2, 68, 68);
+    color: #f2f2f2;
+    transform: scale(105%);
+    /* font-size: 1em; */
+    transition: .4s;
+}
+
+.notesBtn_h3 {
+    /* background-color: beige; */
+    font-size: 1.4em;
+    height: 2.2em;
+    padding: .4em 0;
+    text-align: center;
+}
